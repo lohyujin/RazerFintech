@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   
@@ -128,15 +129,45 @@
         <div class="row mb-5 justify-content-center">
           <div class="col-md-8 text-center">
             <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="">Account Summary</h2>
-            <div id="account_summary">
+            <div id="account_summary"></div>
               <script>
+                
+                // income vs expenses
                 TESTER = document.getElementById('account_summary');
                 Plotly.newPlot( TESTER, [{
                 x: [1, 2, 3, 4, 5],
                 y: [1, 2, 4, 8, 16] }], {
                 margin: { t: 0 } } );
+
+                // display the expenses
+                var username = "Team52";
+                var password = "pass90909350C";
+                var savingsacc = "8a8e86fd72174fdd01721d67c7ac2dbc";
+                var serviceURL = "https://razerhackathon.sandbox.mambu.com/api/savings/"+ savingsacc +"/transactions";
+
+                $.ajax   ({
+                    type: "GET",
+                    url: serviceURL,
+                    dataType: 'json',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    headers: {
+                        "Authorization": "Basic " + btoa(username + ":" + password),
+                    },
+                    success: function (data){
+                        for (var i = 0; i < data.length; i++)   {
+                            var category = data[i].comment;
+                            var amt = data[i].amount;
+                            console.log(category);
+                        };
+                    }
+                });
+
+
               </script>
-            </div>
+              <div id="expenses"></div>
+            
             <p class="lead" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima neque tempora reiciendis.</p>
           </div>
         </div>
