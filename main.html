@@ -66,7 +66,7 @@
                 <li><a href="#home-section" class="nav-link">Home</a></li>
                 <li><a href="#about-section" class="nav-link">Account Summary</a></li>
                 <li><a href="#profile-section" class="nav-link">My Profile</a></li>
-                <li><a href="#contact-section" class="nav-link">Logout</a></li>
+                <li><a href="index.html" class="nav-link">Logout</a></li>
               </ul>
             </nav>
           </div>
@@ -123,51 +123,42 @@
     
     <div class="site-section cta-big-image" id="about-section">
       <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-8 text-center">
+        <!-- <div class="row mb-5 justify-content-center"> -->
+          <div class="col-md-12 text-center">
             <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="">Account Summary</h2>
-            <div id="account_summary"></div>
+            <div id="savings", class="col-md-5 d-inline-block ">
+              <h3 data-aos="fade-up" data-aos-delay="">Savings</h3>
+              <p class="lead" data-aos="fade-up" data-aos-delay="100">How your assets are distributed</p>
+              <div id="acc_sum_plot", class='pr-md-1'>
               <script>
-                
-                // income vs expenses
-                TESTER = document.getElementById('account_summary');
-                Plotly.newPlot( TESTER, [{
-                x: [1, 2, 3, 4, 5],
-                y: [1, 2, 4, 8, 16] }], {
-                margin: { t: 0 } } );
-
-                // // display the expenses
-                // var username = "Team52";
-                // var password = "pass90909350C";
-                // var savingsacc = "8a8e86fd72174fdd01721d67c7ac2dbc";
-                // var serviceURL = "https://razerhackathon.sandbox.mambu.com/api/savings/"+ savingsacc +"/transactions";
-
-                // $.ajax   ({
-                //     type: "GET",
-                //     url: serviceURL,
-                //     dataType: 'json',
-                //     xhrFields: {
-                //         withCredentials: true
-                //     },
-                //     headers: {
-                //         "Authorization": "Basic " + btoa(username + ":" + password),
-                //     },
-                //     success: function (data){
-                //         for (var i = 0; i < data.length; i++)   {
-                //             var category = data[i].comment;
-                //             var amt = data[i].amount;
-                //             console.log(category);
-                //         };
-                //     }
-                // });
-
-
+                var data = [{
+                  values: [15*100,75*100,10*100],
+                  labels: ['Investments', 'Savings', 'Insurance'],
+                  type:'pie',
+                  hole: 0.25,
+                  hoverinfo: 'label+value'
+                }]
+                Plotly.newPlot('acc_sum_plot', data)
               </script>
-              <div id="expenses"></div>
+              </div>
+            </div>
             
-
-
-              
+            <div id="expenditure", class="col-md-5 d-inline-block">
+              <h3 data-aos="fade-up" data-aos-delay="">Expenditures</h3>
+              <p class="lead" data-aos="fade-up" data-aos-delay="100">Your spending for the month</p>
+              <div id="exp_plot", class="pl-md-1">
+              <script>
+                var d2 = [{
+                  values: [35, 100, 50, 60],
+                  labels: ['Insurance', 'F&B', 'Subscriptions', 'Withdrawals'],
+                  type: 'pie',
+                  hole: 0.25,
+                  hoverinfo: 'label+value'
+                }]
+                Plotly.newPlot('exp_plot', d2)
+              </script>
+              </div>
+            </div>
           </div>
         </div>
       </div>  
@@ -184,10 +175,10 @@
               </figure>
             </div>
             <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
-              
-              <h3 class="text-black mb-4">My Profile</h3>
-  
-              <div>
+              <div class="row">
+                <div class="col-12 mb-4" data-aos="fade-up" data-aos-delay="">
+                  <h3>My Profile</h3>
+                
                   <form action="#">
                     <h4>Financial Literacy</h4>
                     <ul class='financial'>
@@ -242,74 +233,16 @@
                             $(this).prevAll().addClass("secondary-active");
                         })
                     </script>
-
-                    <div class="row form-group">
-                        <div class="col-md-12">
-                            <input type="submit" value="Update" class="btn btn-primary btn-md text-white">
-                        </div>
-                    </div>
-
                   </form>
+                </div>
+            </div>
+          </div>
               </div>
             </div>
           </div>    
       </div>
     </section>
    
-
-            
-
-            <form action="#" class="p-5 bg-grey">
-              
-              <h2 class="h4 text-black mb-5">Contact Form</h2> 
-
-              <div class="row form-group">
-                <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="fname">First Name</label>
-                  <input type="text" id="fname" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label class="text-black" for="lname">Last Name</label>
-                  <input type="text" id="lname" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="subject">Subject</label> 
-                  <input type="subject" id="subject" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="text-black" for="message">Message</label> 
-                  <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Send Message" class="btn btn-primary btn-md text-white">
-                </div>
-              </div>
-
-  
-            </form>
-          </div>
-          
-        </div>
-      </div>
-    </section>
 
     
     <footer class="site-footer">
@@ -325,9 +258,9 @@
               <div class="col-md-3 ml-auto">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#home-section" class="smoothscroll">Home</a></li>
-                  <li><a href="#about-section" class="smoothscroll">Account Summary</a></li>
-                  <li><a href="#profile-section" class="smoothscroll">My Profile</a></li>
+                  <li style="font-size: 20px"><a href="#home-section" class="smoothscroll">Home</a></li>
+                  <li style="font-size: 20px"><a href="#about-section" class="smoothscroll">Account Summary</a></li>
+                  <li style="font-size: 20px"><a href="#profile-section" class="smoothscroll">My Profile</a></li>
                 </ul>
               </div>
               <div class="col-md-3 footer-social">
@@ -355,9 +288,9 @@
           <div class="col-md-12">
             <div class="border-top pt-5">
               <p class="copyright"><small>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
             Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></p>
+            Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></p>
         
             </div>
           </div>
