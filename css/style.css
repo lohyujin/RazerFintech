@@ -2097,3 +2097,27 @@ figure figcaption {
     .single-text .owl-dots .owl-dot.active > span {
       width: 20px;
       background-color: #fff; }
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0px;
+    color: grey;
+    font-size: 25px;
+}
+
+ul li:hover{
+    color: orange;
+}
+
+input[type="radio"]{
+    display: none
+}
+ul li.active, ul li.secondary-active{
+    color: orange;
+}
