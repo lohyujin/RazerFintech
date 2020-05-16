@@ -7,7 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -64,11 +64,8 @@
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li>
-                  <a href="#about-section" class="nav-link">Account Summary</a>
-                </li>
-
-                <li><a href="https://light.microsite.perxtech.io/game/3?token=4a5a34bd7ea7d71d2aca1622b0ff3f001030fbaec858f47ca7177ef73ba6698e&redirect_uri=http://localhost/RazerFintech/main.html" class="nav-link">Games</a></li>
+                <li><a href="#about-section" class="nav-link">Account Summary</a></li>
+                <li><a href="#profile-section" class="nav-link">My Profile</a></li>
                 <li><a href="#contact-section" class="nav-link">Logout</a></li>
               </ul>
             </nav>
@@ -139,181 +136,126 @@
                 y: [1, 2, 4, 8, 16] }], {
                 margin: { t: 0 } } );
 
-                // display the expenses
-                var username = "Team52";
-                var password = "pass90909350C";
-                var savingsacc = "8a8e86fd72174fdd01721d67c7ac2dbc";
-                var serviceURL = "https://razerhackathon.sandbox.mambu.com/api/savings/"+ savingsacc +"/transactions";
+                // // display the expenses
+                // var username = "Team52";
+                // var password = "pass90909350C";
+                // var savingsacc = "8a8e86fd72174fdd01721d67c7ac2dbc";
+                // var serviceURL = "https://razerhackathon.sandbox.mambu.com/api/savings/"+ savingsacc +"/transactions";
 
-                $.ajax   ({
-                    type: "GET",
-                    url: serviceURL,
-                    dataType: 'json',
-                    xhrFields: {
-                        withCredentials: true
-                    },
-                    headers: {
-                        "Authorization": "Basic " + btoa(username + ":" + password),
-                    },
-                    success: function (data){
-                        for (var i = 0; i < data.length; i++)   {
-                            var category = data[i].comment;
-                            var amt = data[i].amount;
-                            console.log(category);
-                        };
-                    }
-                });
+                // $.ajax   ({
+                //     type: "GET",
+                //     url: serviceURL,
+                //     dataType: 'json',
+                //     xhrFields: {
+                //         withCredentials: true
+                //     },
+                //     headers: {
+                //         "Authorization": "Basic " + btoa(username + ":" + password),
+                //     },
+                //     success: function (data){
+                //         for (var i = 0; i < data.length; i++)   {
+                //             var category = data[i].comment;
+                //             var amt = data[i].amount;
+                //             console.log(category);
+                //         };
+                //     }
+                // });
 
 
               </script>
               <div id="expenses"></div>
             
-            <p class="lead" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima neque tempora reiciendis.</p>
+
+
+              
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
-            <figure class="circle-bg">
-            <img src="images/hero_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
-            </figure>
-          </div>
-          <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
-            
-            <h3 class="text-black mb-4">We Solve Your Financial Problem</h3>
-
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            
-          </div>
-        </div>    
-        
       </div>  
     </div>
 
 
 
-    <section class="site-section border-bottom bg-light" id="services-section">
+    <section class="site-section border-bottom bg-light" id="profile-section">
       <div class="container">
-        <div class="row mb-5">
-          <div class="col-12 text-center" data-aos="fade">
-            <h2 class="section-title mb-3">Our Services</h2>
-          </div>
-        </div>
-        <div class="row align-items-stretch">
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
-            <div class="unit-4">
-              <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/001-wallet.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
-              </div>
-              <div>
-                <h3>Business Consulting</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
+        <div class="row">
+            <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
+              <figure class="circle-bg">
+              <img src="images/hero_1.jpg" class="img-fluid">
+              </figure>
             </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="unit-4">
-              <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/006-credit-card.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
-              </div>
+            <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+              
+              <h3 class="text-black mb-4">My Profile</h3>
+  
               <div>
-                <h3>Credit Card</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="unit-4">
-              <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/002-rich.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
-              </div>
-              <div>
-                <h3>Income Monitoring</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
+                  <form action="#">
+                    <h4>Financial Literacy</h4>
+                    <ul class='financial'>
+                        <li class='active'><label for='rating_1'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_1" value="1"/></li>
+                        <li class='active'><label for='rating_2'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="2"/></li>
+                        <li><label for='rating_3'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="3"/></li>
+                        <li><label for='rating_4'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="4"/></li>
+                        <li><label for='rating_5'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="5"/></li>
+                    </ul>
+                    
+                    <script>
+                        $('ul.financial li').on('click',function(){
+                            $('li').removeClass('active');
+                            $('li').removeClass('secondary-active');
+                            $(this).addClass("active");
+                            $(this).prevAll().addClass("secondary-active");
+                        })
+                    </script>
 
+                    <h4>Spending Needs</h4>
+                    <ul class='spending'>
+                        <li class='active'><label for='rating_1'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_1" value="1"/></li>
+                        <li class='active'><label for='rating_2'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="2"/></li>
+                        <li class='active'><label for='rating_3'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="3"/></li>
+                        <li class='active'><label for='rating_4'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="4"/></li>
+                        <li class='active'><label for='rating_5'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="5"/></li>
+                    </ul>
 
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="">
-            <div class="unit-4">
-              <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/003-notes.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
-              </div>
-              <div>
-                <h3>Insurance Consulting</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="unit-4">
-              <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/004-cart.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
-              </div>
-              <div>
-                <h3>Financial Investment</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="unit-4">
-              <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/005-megaphone.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
-              </div>
-              <div>
-                <h3>Financial Management</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
+                    <script>
+                        $('ul.spending li').on('click',function(){
+                            $('li').removeClass('active');
+                            $('li').removeClass('secondary-active');
+                            $(this).addClass("active");
+                            $(this).prevAll().addClass("secondary-active");
+                        })
+                    </script>
 
-        </div>
+                    <h4>Risk Appetite</h4>
+                    <ul class='risk'>
+                        <li class='active'><label for='rating_1'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_1" value="1"/></li>
+                        <li><label for='rating_2'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="2"/></li>
+                        <li><label for='rating_3'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="3"/></li>
+                        <li><label for='rating_4'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="4"/></li>
+                        <li><label for='rating_5'><i class="fa fa-star" aria-hidden="true"></i></label><input type="radio" name="ratings" id="rating_2" value="5"/></li>
+                    </ul>
+
+                    <script>
+                        $('ul.risk li').on('click',function(){
+                            $('li').removeClass('active');
+                            $('li').removeClass('secondary-active');
+                            $(this).addClass("active");
+                            $(this).prevAll().addClass("secondary-active");
+                        })
+                    </script>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <input type="submit" value="Update" class="btn btn-primary btn-md text-white">
+                        </div>
+                    </div>
+
+                  </form>
+              </div>
+            </div>
+          </div>    
       </div>
     </section>
    
-
-
-    <section class="site-section bg-light" id="contact-section" data-aos="fade">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12 text-center">
-            <h2 class="section-title mb-3">Contact Us</h2>
-          </div>
-        </div>
-        <div class="row mb-5">
-          
-
-
-          <div class="col-md-4 text-center">
-            <p class="mb-4">
-              <span class="icon-room d-block h2 text-primary"></span>
-              <span>203 Fake St. Mountain View, San Francisco, California, USA</span>
-            </p>
-          </div>
-          <div class="col-md-4 text-center">
-            <p class="mb-4">
-              <span class="icon-phone d-block h2 text-primary"></span>
-              <a href="#">+1 232 3235 324</a>
-            </p>
-          </div>
-          <div class="col-md-4 text-center">
-            <p class="mb-0">
-              <span class="icon-mail_outline d-block h2 text-primary"></span>
-              <a href="#">youremail@domain.com</a>
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 mb-5">
 
             
 
@@ -385,7 +327,7 @@
                 <ul class="list-unstyled">
                   <li><a href="#home-section" class="smoothscroll">Home</a></li>
                   <li><a href="#about-section" class="smoothscroll">Account Summary</a></li>
-                  <li><a href="games.html" class="smoothscroll">Games</a></li>
+                  <li><a href="#profile-section" class="smoothscroll">My Profile</a></li>
                 </ul>
               </div>
               <div class="col-md-3 footer-social">
