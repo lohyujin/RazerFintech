@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   
@@ -161,24 +162,40 @@
               </script>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- <div class="row">
-          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
-            <figure class="circle-bg">
-            <img src="images/hero_1.jpg"  class="img-fluid">
-            </figure>
-          </div>
-          <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
-            
-            <h3 class="text-black mb-4">We Solve Your Financial Problem</h3>
+              <!-- <script>
+                // income vs expenses
+                TESTER = document.getElementById('account_summary');
+                Plotly.newPlot( TESTER, [{
+                x: [1, 2, 3, 4, 5],
+                y: [1, 2, 4, 8, 16] }], {
+                margin: { t: 0 } } );
 
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                // display the expenses
+                var username = "Team52";
+                var password = "pass90909350C";
+                var savingsacc = "8a8e86fd72174fdd01721d67c7ac2dbc";
+                var serviceURL = "https://razerhackathon.sandbox.mambu.com/api/savings/"+ savingsacc +"/transactions";
 
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            
+                $.ajax   ({
+                    type: "GET",
+                    url: serviceURL,
+                    dataType: 'json',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    headers: {
+                        "Authorization": "Basic " + btoa(username + ":" + password),
+                    },
+                    success: function (data){
+                        for (var i = 0; i < data.length; i++)   {
+                            var category = data[i].comment;
+                            var amt = data[i].amount;
+                            console.log(category);
+                        };
+                    }
+                });
+              </script> -->
           </div>
-        </div>     -->
       </div>  
     </div>
 
