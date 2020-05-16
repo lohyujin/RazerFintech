@@ -25,22 +25,23 @@ def login_user():
         return am.jsonify({'msg': 'Invalid input'}), 400
 
 
-    dynamodb = am.boto3.client('dynamodb')
-    user = dynamodb.get_item(TableName='login', Key={'username': username})
-    # user = am.clients.find_one({'username': username})
+    dynamodb = am.boto3.resource('dynamodb', region_name='ap-southeast-1')
+    table = dynamodb.Table('login')
+    response = table.get_item(Key={'username': username})
+    user = response['Item']
+    pw = user['password_hash'].value
+    # user = am.clients.find_one({'username': {'s': username}})
 
     if not user:
         return am.jsonify({'msg': 'Invalid username/password'}), 409
 
-    valid = am.bcrypt.check_password_hash(user['password_hash'].decode('UTF-8'),
-                                          password)
+    valid = am.bcrypt.check_password_hash(pw.decode('UTF-8'), password)
     if not valid:
         return am.jsonify({'msg': 'Invalid username/password'}), 409
 
-    token = am.create_access_token(identity={'username': username,
-                                             'user_type': user['user_type']})
-    return am.jsonify({'access_token': token}), 201
-
+    #token = am.create_access_token(identity={'username': username,'user_type': user['user_type']})
+    #return am.jsonify({'access_token': token}), 201
+    return am.jsonify({'Success': True})
 
 @login_bp.route('/reset', methods=['POST'])
 def reset_password():

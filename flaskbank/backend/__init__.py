@@ -28,12 +28,12 @@ def create_app(current_config=DevelopmentConfig):
 
     # Blueprints
     from flaskbank.backend.api import API_BLUEPRINTS
-    from flaskbank.backend.main.routes import main_bp
+    #from flaskbank.backend.main.routes import main_bp
 
     for bp in API_BLUEPRINTS:
         app.register_blueprint(bp, url_prefix='/api')
 
-    app.register_blueprint(main_bp)
+    #app.register_blueprint(main_bp)
 
     from .api.autopay import scheduler
     scheduler.start()
