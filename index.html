@@ -1,5 +1,10 @@
 <!doctype html>
 <html lang="en">
+<script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous">
+</script>
   <head>
     <title>RazerFintech</title>
     <meta charset="utf-8">
@@ -33,34 +38,59 @@
             </span> </a></h1>
             </div>
         </div>
-    </div>
-    <div class = 'row'>
-        <div class = "col-md-12 mb-5">
-            <form action='main.html' class = "p-5 bg-white">
-                <h2 class="h4 text-black mb-5">Login</h2> 
-                <div class="row form-group">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <label class="text-black" for="uname">username</label>
-                        <input type="text" id="uname" class="form-control">
-                    </div>
-                    </div>
     
+        <div class = 'row'>
+            <div class = "col-md-12 mb-5">
+                <!-- <form action='main.html' class = "p-5 bg-white"> -->
+                    <h2 class="h4 text-black mb-5">Login</h2> 
                     <div class="row form-group">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <label class="text-black" for="pw">password</label> 
-                        <input type="password" id="pw" class="form-control">
-                    </div>
-                    </div>
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label class="text-black" for="uname">username</label>
+                            <input type="text" id="uname" class="form-control">
+                        </div>
+                        </div>
+        
+                        <div class="row form-group">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label class="text-black" for="pw">password</label> 
+                            <input type="password" id="pw" class="form-control">
+                        </div>
+                        </div>
 
-                    <div class="row form-group">
-                    <div class="col-mb-3 mb-md-0">
-                        <button type="submit" name="login" class="btn btn-primary btn-md text-white">Login</button>
-                    </div>
-                    <div class="col-md-6 mb-0 mb-md-0">
+                        <div class="row form-group">
+                        <div class="col-mb-3 mb-md-0">
+                            <button id='login-submit', type="submit" name="login" class="btn btn-primary btn-md text-white">Login</button>
+                        </div>
+                        <div class="col-md-6 mb-0 mb-md-0">
                             <button type="submit" name="create" class="btn btn-primary btn-md text-white">Create Account</button>
-                    </div>
-                    </div>
-            </form>
+                        </div>
+                        </div>
+                <!-- </form> -->
+            </div>
         </div>
     </div>
   </body>
+
+<script>
+    function onlog(data) {
+        var resp = data['Success'];
+        if (resp === true) {
+            window.location = 'main.html'
+        }
+    }
+    function readyFn(jquery) {
+        $("#login-submit").click(function(event) {
+            var uname = $("#uname").val();
+            var pw = $("#pw").val();
+            var posting = $.ajax({
+                type: "POST",
+                url: 'http://54.169.115.186:5000/api/login',
+                data: JSON.stringify({'username': uname, 'password': pw}),
+                dataType: 'json',
+                contentType: 'application/json'
+                });
+            posting.done(onlog);
+        })
+    }
+    $(document).ready(readyFn);
+</script>
