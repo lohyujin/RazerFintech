@@ -125,25 +125,48 @@
     
     <div class="site-section cta-big-image" id="about-section">
       <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-8 text-center">
+        <!-- <div class="row mb-5 justify-content-center"> -->
+          <div class="col-md-12 text-center">
             <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="">Account Summary</h2>
-            <div id="account_summary">
+            <div id="savings", class="col-md-5 d-inline-block ">
+              <h3>Savings</h3>
+              <p class="lead" data-aos="fade-up" data-aos-delay="100">How your assets are distributed</p>
+              <div id="acc_sum_plot", class='pr-md-1'>
               <script>
-                TESTER = document.getElementById('account_summary');
-                Plotly.newPlot( TESTER, [{
-                x: [1, 2, 3, 4, 5],
-                y: [1, 2, 4, 8, 16] }], {
-                margin: { t: 0 } } );
+                var data = [{
+                  values: [15*100,75*100,10*100],
+                  labels: ['Investments', 'Savings', 'Insurance'],
+                  type:'pie',
+                  hole: 0.25,
+                  hoverinfo: 'label+value'
+                }]
+                Plotly.newPlot('acc_sum_plot', data)
               </script>
+              </div>
             </div>
-            <p class="lead" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima neque tempora reiciendis.</p>
+            
+            <div id="expenditure", class="col-md-5 d-inline-block">
+              <h3>Expenditures</h3>
+              <p class="lead" data-aos="fade-up" data-aos-delay="100">Your spending for the month</p>
+              <div id="exp_plot", class="pl-md-1">
+              <script>
+                var d2 = [{
+                  values: [35, 100, 50, 60],
+                  labels: ['Insurance', 'F&B', 'Subscriptions', 'Withdrawals'],
+                  type: 'pie',
+                  hole: 0.25,
+                  hoverinfo: 'label+value'
+                }]
+                Plotly.newPlot('exp_plot', d2)
+              </script>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
             <figure class="circle-bg">
-            <img src="images/hero_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+            <img src="images/hero_1.jpg"  class="img-fluid">
             </figure>
           </div>
           <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
@@ -155,8 +178,7 @@
             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
             
           </div>
-        </div>    
-        
+        </div>     -->
       </div>  
     </div>
 
@@ -173,7 +195,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/001-wallet.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="images/flaticon-svg/svg/001-wallet.svg"  class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Business Consulting</h3>
@@ -185,7 +207,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/006-credit-card.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="images/flaticon-svg/svg/006-credit-card.svg"  class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Credit Card</h3>
@@ -197,7 +219,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/002-rich.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="images/flaticon-svg/svg/002-rich.svg"  class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Income Monitoring</h3>
@@ -211,7 +233,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/003-notes.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="images/flaticon-svg/svg/003-notes.svg"  class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Insurance Consulting</h3>
@@ -223,7 +245,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/004-cart.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="images/flaticon-svg/svg/004-cart.svg"  class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Financial Investment</h3>
@@ -235,7 +257,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/005-megaphone.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="images/flaticon-svg/svg/005-megaphone.svg"  class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Financial Management</h3>
