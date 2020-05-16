@@ -191,8 +191,8 @@
                     
                     <script>
                         $('ul.financial li').on('click',function(){
-                            $('li').removeClass('active');
-                            $('li').removeClass('secondary-active');
+                            $('ul.financial li').removeClass('active');
+                            $('ul.financial li').removeClass('secondary-active');
                             $(this).addClass("active");
                             $(this).prevAll().addClass("secondary-active");
                         })
@@ -209,8 +209,8 @@
 
                     <script>
                         $('ul.spending li').on('click',function(){
-                            $('li').removeClass('active');
-                            $('li').removeClass('secondary-active');
+                            $('ul.spending li').removeClass('active');
+                            $('ul.spending li').removeClass('secondary-active');
                             $(this).addClass("active");
                             $(this).prevAll().addClass("secondary-active");
                         })
@@ -227,8 +227,8 @@
 
                     <script>
                         $('ul.risk li').on('click',function(){
-                            $('li').removeClass('active');
-                            $('li').removeClass('secondary-active');
+                            $('ul.risk li').removeClass('active');
+                            $('ul.risk li').removeClass('secondary-active');
                             $(this).addClass("active");
                             $(this).prevAll().addClass("secondary-active");
                         })
